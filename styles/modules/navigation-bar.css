@@ -1,0 +1,64 @@
+/* Эта часть кода отвечает за навигационное меню */
+nav {
+  margin-top: 10px;
+  padding: 5px 0 5px 0;
+  background-color: #04304f;
+  color: white;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  padding: 0;
+}
+
+.nav-menu > li {
+  flex: 1;
+  position: relative;
+  border-top: 0px;
+  border-right: white solid 1px;
+}
+
+.nav-menu > li:last-child {
+  border: 0;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
+
+.nav-menu > li > a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 10px 0;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.navigator {
+  position: absolute;
+  height: 5px;
+  background-color: transparent;
+  background-color: #d6e3f4;
+}
+
+.navigator-line {
+  position: absolute;
+  bottom: 0;
+  height: 5px;
+  background-color: rgb(255, 182, 12);
+  width: 0;
+  left: 0;
+  transition: all 0.3s ease;
+  border-radius: 3px;
+}
+/*_____________________________*/

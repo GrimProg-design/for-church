@@ -1,0 +1,20 @@
+/* Это header сайта */
+header {
+  background-color: white;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px 0;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.logo-section {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+/*_____________________________*/

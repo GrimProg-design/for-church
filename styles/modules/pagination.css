@@ -1,0 +1,22 @@
+/* Стили для пагинации (в архивах) разделил контент на части */
+.pagination {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.pagination button {
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  background-color: white;
+  cursor: pointer;
+}
+
+.pagination button.active {
+  background-color: #333;
+  color: white;
+  font-weight: bold;
+}
+/*____________________________*/

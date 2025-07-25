@@ -1,0 +1,23 @@
+@import url(modules/header.css);
+@import url(modules/navigation-bar.css);
+@import url(modules/support-button.css);
+@import url(modules/main-grid.css);
+@import url(modules/all-news.css);
+@import url(modules/sidebar.css);
+@import url(modules/4-blocks.css);
+@import url(modules/history.css);
+@import url(modules/contacts.css);
+@import url(modules/schedule.css);
+@import url(modules/pagination.css);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  color: #222;
+  background-color: #d6e3f4;
+}

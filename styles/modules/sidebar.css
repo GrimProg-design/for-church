@@ -1,0 +1,51 @@
+/* Это часть кода отвечаает за боковое меню */
+aside {
+  grid-column: 2;
+}
+
+
+.sidebar {
+  background-color: #f4f6f8;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  user-select: none;
+}
+
+.sidebar h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #04304f;
+  border-bottom: 2px solid #ffa3a3;
+  padding-bottom: 8px;
+}
+
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-menu li {
+  margin-bottom: 10px;
+}
+
+.sidebar-menu a {
+  display: block;
+  padding: 10px 15px;
+  color: #04304f;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sidebar-menu a:hover,
+.sidebar-menu a:focus {
+  background-color: #ffa3a3;
+  color: white;
+  outline: none;
+}
+/*_____________________________*/
