@@ -61,4 +61,72 @@ nav {
   transition: all 0.3s ease;
   border-radius: 3px;
 }
+
+@media (max-width: 768px) {
+  .nav-wrapper {
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-wrapper::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav-menu {
+    display: flex;
+    flex-wrap: nowrap;
+    min-width: max-content;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .nav-menu > li {
+    flex: 0 0 auto;
+    border-right: 1px solid white;
+    white-space: nowrap;
+    text-align: center;
+  }
+
+  .nav-menu > li:last-child {
+    border-right: none;
+  }
+
+  .nav-menu > li > a {
+    padding: 12px 15px;
+    display: inline-block;
+    width: 100%;
+  }
+
+  .nav-fade {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 60px;
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  .nav-fade.left {
+    left: 0;
+    background: linear-gradient(to right, #04304f, transparent);
+  }
+
+  .nav-fade.right {
+    right: 0;
+    background: linear-gradient(to left, #04304f, transparent);
+  }
+
+  .navigator,
+  .navigator-line {
+    display: none;
+  }
+}
+
+
+
 /*_____________________________*/

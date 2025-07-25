@@ -9,7 +9,7 @@
       content="Официальный сайт храма. История, расписание, новости, направления служения."
     />
 
-    <link rel="stylesheet" href="styles/main.css"/>
+    <link rel="stylesheet" href="styles/main.css" />
   </head>
   <body>
     <div id="app">
@@ -17,23 +17,22 @@
       <header>
         <div class="header-top">
           <!-- Здесь представлены контактные номера к кому можно обратится -->
-          <address>
-            <p><a href="tel:+996550882217">+996 550 88 22 17</a></p>
-            <p><a href="tel:+996556054103">+996 556 05 41 03</a></p>
-            <p>
-              г. Кант <br />
-              ул. Центральная, 42
-            </p>
-          </address>
+          <div class="address-wrapper">
+            <address>
+              <p><a href="tel:+996550882217">+996 550 88 22 17</a></p>
+              <p><a href="tel:+996556054103">+996 556 05 41 03</a></p>
+              <p>г. Кант <br />ул. Центральная, 42</p>
+            </address>
+          </div>
 
           <div class="logo-section">
-            <img src="/images/pigeon-right.png" alt="Голубь справа" />
+            <img class="pigeon" src="/images/pigeon-right.png" alt="Голубь справа" />
             <img src="/images/hram.png" alt="Изображение храма" />
             <h1>
               ХРАМ ПОКРОВА <br />
               БОЖЬЕЙ МАТЕРИ
             </h1>
-            <img src="/images/pigeon-left.png" alt="Голубь слева" />
+            <img class="pigeon" src="/images/pigeon-left.png" alt="Голубь слева" />
           </div>
 
           <!-- Поддержка нашего храма -->
@@ -44,15 +43,19 @@
 
         <!--  Навигация -->
         <nav aria-label="Главное меню">
-          <ul class="nav-menu">
-            <li><a href="#" data-page="home" class="active">Главная</a></li>
-            <li><a href="#" data-page="history">История прихода</a></li>
-            <li>
-              <a href="#" data-page="schedule">Расписание богослужений</a>
-            </li>
-            <li><a href="#" data-page="reports">Отчеты</a></li>
-            <li><a href="#" data-page="contacts">Контакты</a></li>
-          </ul>
+          <div class="nav-wrapper">
+            <ul class="nav-menu">
+              <li><a href="#" data-page="home" class="active">Главная</a></li>
+              <li><a href="#" data-page="history">История прихода</a></li>
+              <li>
+                <a href="#" data-page="schedule">Расписание богослужений</a>
+              </li>
+              <li><a href="#" data-page="reports">Отчеты</a></li>
+              <li><a href="#" data-page="contacts">Контакты</a></li>
+            </ul>
+            <div class="nav-fade left"></div>
+            <div class="nav-fade right"></div>
+          </div>
           <div class="navigator">
             <div class="navigator-line"></div>
           </div>
@@ -114,6 +117,10 @@
             </li>
           </ul>
         </aside>
+
+        <footer>
+          <div class="address-wrapper-mobile"></div>
+        </footer>
       </div>
     </div>
 
@@ -123,9 +130,44 @@
 
       Решил не использовать React и JSX, чтобы повысить производительность и облегчить загрузку сайта на слабых устройствах.
     -->
+    <button class="menu-toggle" aria-label="Открыть меню">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <script>
+      const toggleButton = document.querySelector(".menu-toggle");
+      const sidebar = document.querySelector(".sidebar");
+
+      toggleButton.addEventListener("click", () => {
+        sidebar.classList.toggle("open");
+      });
+
+      document.addEventListener("click", (e) => {
+        if (!sidebar.contains(e.target) && !toggleButton.contains(e.target)) {
+          sidebar.classList.remove("open");
+        }
+      });
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        if (window.innerWidth <= 600) {
+          const address = document.querySelector(".address-wrapper");
+          const footerAddressTarget = document.querySelector(
+            ".address-wrapper-mobile"
+          );
+
+          if (address && footerAddressTarget) {
+            footerAddressTarget.appendChild(address);
+          }
+        }
+      });
+    </script>
+
     <script type="module" src="/JavaScript/router.js"></script>
     <script type="module" src="/JavaScript/line.js"></script>
-   
     <script type="module" src="/JavaScript/pagination.js"></script>
   </body>
 </html>
