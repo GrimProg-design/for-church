@@ -1,0 +1,18 @@
+/* Это кнопки в правой части header */
+.support {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  width: 20vw;
+  height: 6vh;
+  min-width: 70px;
+  min-height: 40px;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid black;
+  border-radius: 10px;
+  color: black;
+  background: -webkit-linear-gradient(to bottom, #ffa3a3, #ffebeb, #ffffff);
+  background: linear-gradient(to bottom, #ffa3a3, #ffebeb, #ffffff);
+}
+/*_____________________________*/

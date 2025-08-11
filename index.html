@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Храм Покрова Божьей Матери</title>
+    <meta
+      name="description"
+      content="Официальный сайт храма. История, расписание, новости, направления служения."
+    />
+
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
+  <body>
+    <div id="app">
+      <!-- Это шапка нашего сайта -->
+      <header>
+        <div class="header-top">
+          <!-- Здесь представлены контактные номера к кому можно обратится -->
+          <div class="address-wrapper">
+            <address>
+              <p><a href="tel:+996550882217">+996 550 88 22 17</a></p>
+              <p><a href="tel:+996556054103">+996 556 05 41 03</a></p>
+              <p>г. Кант <br />ул. Центральная, 42</p>
+            </address>
+          </div>
+
+          <div class="logo-section">
+            <img class="pigeon" src="images/pigeon-right.png" alt="Голубь справа" />
+            <img src="images/hram.png" alt="Изображение храма" />
+            <h1>
+              ХРАМ ПОКРОВА <br />
+              БОЖЬЕЙ МАТЕРИ
+            </h1>
+            <img class="pigeon" src="images/pigeon-left.png" alt="Голубь слева" />
+          </div>
+
+          <!-- Поддержка нашего храма -->
+          <section aria-label="Поддержка храма">
+            <button type="button" class="support">Пожертвовать</button>
+          </section>
+        </div>
+
+        <!--  Навигация -->
+        <nav aria-label="Главное меню">
+          <div class="nav-wrapper">
+            <ul class="nav-menu">
+              <li><a href="#" data-page="home" class="active">Главная</a></li>
+              <li><a href="#" data-page="history">История прихода</a></li>
+              <li>
+                <a href="#" data-page="schedule">Расписание богослужений</a>
+              </li>
+              <li><a href="#" data-page="reports">Отчеты</a></li>
+              <li><a href="#" data-page="contacts">Контакты</a></li>
+            </ul>
+            <div class="nav-fade left"></div>
+            <div class="nav-fade right"></div>
+          </div>
+          <div class="navigator">
+            <div class="navigator-line"></div>
+          </div>
+        </nav>
+      </header>
+
+      <!-- Контейнер для сайдбара и основного контента -->
+      <div class="container">
+        <!-- Основной контент -->
+        <main id="content" role="main">
+          <section aria-labelledby="news-title">
+            <h2 class="h2-title">Новости прихода</h2>
+
+            <div class="news-list">
+              <article class="box-news-1">
+                <a href="#" data-page="news-1">Новость 1</a>
+              </article>
+              <article class="box-news-2">
+                <a href="#" data-page="news-2">Новость 2</a>
+              </article>
+              <article class="box-news-3">
+                <a href="#" data-page="news-3">Новость 3</a>
+              </article>
+              <article class="box-news-4">
+                <a href="#" data-page="news-4">Новость 4</a>
+              </article>
+              <article class="box-news-5">
+                <a href="#" data-page="news-5">Новость 5</a>
+              </article>
+              <article class="box-news-6">
+                <a href="#" data-page="news-6">Новость 6</a>
+              </article>
+            </div>
+          </section>
+        </main>
+
+        <!-- Боковое меню с направлениями -->
+        <aside class="sidebar" aria-label="Меню направлений">
+          <h2 class="h2-title">Направления</h2>
+          <ul class="sidebar-menu">
+            <li><a href="#" data-page="education">Образование</a></li>
+            <li><a href="#" data-page="social">Социальное служение</a></li>
+            <li><a href="#" data-page="cossacks">Казачество</a></li>
+            <li>
+              <a href="#" data-page="renovation">Ремонт и строительство</a>
+            </li>
+            <li><a href="#" data-page="decor">Украшение храма</a></li>
+          </ul>
+          <h2 class="h2-title">Архив</h2>
+          <ul class="sidebar-menu">
+            <li><a href="#" data-page="archive">Новости</a></li>
+            <li>
+              <a href="#" data-page="cossacks-archive">Новости из казачества</a>
+            </li>
+            <li>
+              <a href="#" data-page="renovationArchive"
+                >Новости по восстановлению храма</a
+              >
+            </li>
+          </ul>
+        </aside>
+
+        <footer>
+          <div class="address-wrapper-mobile"></div>
+        </footer>
+      </div>
+    </div>
+
+    <!-- 
+      -Ало React?
+      -Да-да, не слышали...
+
+      Решил не использовать React и JSX, чтобы повысить производительность и облегчить загрузку сайта на слабых устройствах.
+    -->
+    <button class="menu-toggle" aria-label="Открыть меню">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <script>
+      const toggleButton = document.querySelector(".menu-toggle");
+      const sidebar = document.querySelector(".sidebar");
+
+      toggleButton.addEventListener("click", () => {
+        sidebar.classList.toggle("open");
+      });
+
+      document.addEventListener("click", (e) => {
+        if (!sidebar.contains(e.target) && !toggleButton.contains(e.target)) {
+          sidebar.classList.remove("open");
+        }
+      });
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        if (window.innerWidth <= 600) {
+          const address = document.querySelector(".address-wrapper");
+          const footerAddressTarget = document.querySelector(
+            ".address-wrapper-mobile"
+          );
+
+          if (address && footerAddressTarget) {
+            footerAddressTarget.appendChild(address);
+          }
+        }
+      });
+    </script>
+
+    <script type="module" src="JavaScript/router.js"></script>
+    <script type="module" src="JavaScript/line.js"></script>
+    <script type="module" src="JavaScript/pagination.js"></script>
+  </body>
+</html>

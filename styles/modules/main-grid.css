@@ -1,0 +1,24 @@
+/* Создаем сетку для корректного отображения Header, main, sideBar */
+.container {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+}
+
+header {
+  grid-column: 1 / 3;
+}
+
+main {
+  grid-column: 1;
+}
+
+.h2-title {
+  text-align: center;
+  margin-top: 50px;
+}
+
+@media (max-width: 768px) {
+  main {
+    grid-column: 1/3;
+  }
+}

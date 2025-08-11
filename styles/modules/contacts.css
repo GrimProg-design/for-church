@@ -1,0 +1,79 @@
+/* Тут находятся стили для контактов */
+.contacts-grid > article {
+  margin: 20px;
+  height: 40vh;
+  position: relative;
+  padding: 0;
+}
+
+.contacts-grid > article > button.contact-card {
+  all: unset;
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  text-align: left;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  background-color: #A3B8C4;
+  color: #fff;
+  user-select: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.contacts-grid > article > button.contact-card:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+  transform: scale(1.01);
+}
+
+.inside-button {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.photo-wrapper {
+  width: 15vw;
+  min-width: 120px;
+  text-align: center;
+}
+
+.contact-img1 {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+  margin: 0 auto;
+}
+
+.photo-wrapper figcaption {
+  font-size: 0.9rem;
+  margin-top: 8px;
+  line-height: 1.2;
+  color: #fff;
+}
+
+.info-wrapper {
+  flex: 1;
+}
+
+.main-about-contacts {
+  line-height: 1.4;
+  font-size: 0.95rem;
+  margin-top: 8px;
+  text-align: left;
+}
+
+figure {
+  margin: 0;
+}
+
+.h2-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+/*_____________________________*/

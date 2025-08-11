@@ -1,0 +1,89 @@
+/* Таблица с расписанием */
+.calendar-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px;
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  margin-top: 24px;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+  margin-top: 20px;
+  background-color: #f9f9f9;
+  padding: 12px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-header {
+  font-weight: bold;
+  text-align: center;
+  color: #333;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #ccc;
+}
+
+.calendar-day {
+  background-color: #fff;
+  padding: 12px;
+  border-radius: 8px;
+  min-height: 60px;
+  text-align: left;
+  font-size: 0.95rem;
+  box-shadow: inset 0 0 0 1px #ddd;
+  position: relative;
+  transition: background-color 0.3s;
+}
+
+.calendar-day span {
+  display: block;
+  font-size: 0.75rem;
+  margin-top: 4px;
+  color: inherit;
+}
+
+.calendar-day.holiday {
+  background-color: #FFF0F0;
+  border: 1px solid #D99;
+  color: #B33D3D;
+  font-weight: bold;
+}
+
+.calendar-day.sunday {
+  background-color: #EEF5FF;
+  border: 1px solid #99BDED;
+  color: #1C4F9C;
+  font-weight: bold;
+}
+
+.calendar-day.sunday.holiday {
+  background-color: #FFECEC;
+  border: 1px solid #DD8888;
+  color: #AA0000;
+}
+
+.calendar-day.empty {
+  background: transparent;
+  box-shadow: none;
+}
+
+@media (max-width: 768px) {
+  .calendar-day {
+    padding: 8px;
+    font-size: 0.85rem;
+  }
+
+  .calendar-day span {
+    font-size: 0.7rem;
+  }
+
+  .h2-title {
+    font-size: 1.5rem;
+  }
+}
+/*_____________________________*/
