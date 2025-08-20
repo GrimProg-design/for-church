@@ -15,4 +15,17 @@
   background: -webkit-linear-gradient(to bottom, #ffa3a3, #ffebeb, #ffffff);
   background: linear-gradient(to bottom, #ffa3a3, #ffebeb, #ffffff);
 }
+
+@media(max-width: 768px) {
+  .support {
+    margin: 0px 70px 0 0;
+  }
+}
+
+@media(max-width: 650px) {
+  .support {
+    margin: 0 60px 0 0;
+    font-size: 0.6em;
+  }
+}
 /*_____________________________*/

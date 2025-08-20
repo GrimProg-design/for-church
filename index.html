@@ -26,13 +26,21 @@
           </div>
 
           <div class="logo-section">
-            <img class="pigeon" src="images/pigeon-right.png" alt="Голубь справа" />
+            <img
+              class="pigeon"
+              src="images/pigeon-right.png"
+              alt="Голубь справа"
+            />
             <img src="images/hram.png" alt="Изображение храма" />
             <h1>
               ХРАМ ПОКРОВА <br />
               БОЖЬЕЙ МАТЕРИ
             </h1>
-            <img class="pigeon" src="images/pigeon-left.png" alt="Голубь слева" />
+            <img
+              class="pigeon"
+              src="images/pigeon-left.png"
+              alt="Голубь слева"
+            />
           </div>
 
           <!-- Поддержка нашего храма -->
@@ -71,7 +79,10 @@
 
             <div class="news-list">
               <article class="box-news-1">
-                <a href="#" data-page="news-1">Новость 1</a>
+                <a href="#" data-page="news-1">
+                  <img src="./images-news/main_img/photo_2025-08-20 18.14.37.jpeg"/>
+                  <h3 class="news-title">Благотворительная ярмарка</h3>
+                </a>
               </article>
               <article class="box-news-2">
                 <a href="#" data-page="news-2">Новость 2</a>
@@ -142,12 +153,21 @@
 
       toggleButton.addEventListener("click", () => {
         sidebar.classList.toggle("open");
+        sidebar.style.backgroundColor = "#f4f6f8";
       });
 
       document.addEventListener("click", (e) => {
         if (!sidebar.contains(e.target) && !toggleButton.contains(e.target)) {
           sidebar.classList.remove("open");
+          sidebar.style.backgroundColor = "white";
         }
+      });
+
+      sidebar.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          sidebar.classList.remove("open");
+          sidebar.style.backgroundColor = "white";
+        });
       });
     </script>
 

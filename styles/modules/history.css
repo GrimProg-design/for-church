@@ -1,10 +1,10 @@
 /* Текст для истории. Тут нужно еще поработать так как появляется неприятный баг */
 .history-section {
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 2rem;
+  padding-top: 0;
   flex-direction: column;
 }
 
@@ -20,12 +20,16 @@
 }
 
 .history-content {
-  position: absolute;
-  max-width: 70%;
   z-index: 2;
   font-size: clamp(1rem, 2vw, 1.3rem);
   line-height: 1.6;
   text-align: justify;
   color: #333;
+}
+
+@media(max-width: 760px) {
+  .history-paper {
+    display: none;
+  }
 }
 /*_____________________________*/
