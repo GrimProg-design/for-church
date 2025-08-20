@@ -35,6 +35,8 @@ document.addEventListener("DOMContentLoaded", () => {
         path = `pages/section/education-section/${page}.html`
       } else if (page.startsWith("social-")) {
         path = `pages/section/social-section/${page}.html`
+      } else if (page.startsWith("support")) {
+        path = `pages/${page}.html`
       } else if (archiveRootPages.includes(page)) {
         path = `pages/archive-pages/${page}.html`;
         isArchivePage = true;
@@ -48,7 +50,6 @@ document.addEventListener("DOMContentLoaded", () => {
       const html = await res.text();
       content.innerHTML = html;
 
-      // Пагинация — только для корневых архивных страниц
       if (isArchivePage) {
         if (page === "renovationArchive") {
           const renovationNews = [

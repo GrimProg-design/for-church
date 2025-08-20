@@ -8,28 +8,20 @@
   flex-direction: column;
 }
 
-.history-paper {
-  width: 100%;
-  max-width: 900px;
-  height: auto;
-  display: block;
-  position: relative;
-  z-index: 1;
-  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
-  pointer-events: none;
-}
-
 .history-content {
   z-index: 2;
   font-size: clamp(1rem, 2vw, 1.3rem);
   line-height: 1.6;
   text-align: justify;
   color: #333;
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
 }
 
 @media(max-width: 760px) {
-  .history-paper {
-    display: none;
+  .history-section {
+    padding: 1rem;
   }
 }
 /*_____________________________*/

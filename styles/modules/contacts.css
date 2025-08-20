@@ -58,6 +58,9 @@
 
 .info-wrapper {
   flex: 1;
+  box-sizing: border-box;
+  overflow-y: auto;
+  max-height: 300px;
 }
 
 .main-about-contacts {

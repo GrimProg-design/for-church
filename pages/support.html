@@ -1,0 +1,48 @@
+<div class="support-container">
+  <h2>Поддержите нас ❤️</h2>
+  <div class="slider">
+    <!-- Карта -->
+    <div class="slides active" data-type="card">
+      <p>Номер карты:</p>
+      <div class="card-box">
+        <div class="card-chip"></div>
+        <span id="card-number">1234 5678 9012 3456</span>
+        <button class="copy-btn" onclick="copyText('card-number', this)">
+          Скопировать <span class="check"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Телефон -->
+    <div class="slides" data-type="phone">
+      <p>Номер телефона:</p>
+      <div class="info-box phone-box">
+        <div class="phone-top"></div>
+        <div class="phone-screen">
+          <span id="phone-number">+996 555 123 456</span>
+          <button class="copy-btn" onclick="copyText('phone-number', this)">
+            Скопировать <span class="check"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- QR -->
+    <div class="slides" data-type="qr">
+      <p>QR код:</p>
+      <div class="info-box qr-box">
+        <img
+          src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=123456"
+          alt="QR код"
+        />
+      </div>
+    </div>
+  </div>
+
+  <!-- Кнопки -->
+  <div class="controls">
+    <button onclick="showSlide('card')">Карта</button>
+    <button onclick="showSlide('phone')">Телефон</button>
+    <button onclick="showSlide('qr')">QR</button>
+  </div>
+</div>

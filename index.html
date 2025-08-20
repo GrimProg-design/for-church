@@ -45,7 +45,9 @@
 
           <!-- Поддержка нашего храма -->
           <section aria-label="Поддержка храма">
-            <button type="button" class="support">Пожертвовать</button>
+            <a type="button" class="support" href="#" data-page="support"
+              >Пожертвовать</a
+            >
           </section>
         </div>
 
@@ -80,7 +82,9 @@
             <div class="news-list">
               <article class="box-news-1">
                 <a href="#" data-page="news-1">
-                  <img src="./images-news/main_img/photo_2025-08-20 18.14.37.jpeg"/>
+                  <img
+                    src="./images-news/main_img/photo_2025-08-20 18.14.37.jpeg"
+                  />
                   <h3 class="news-title">Благотворительная ярмарка</h3>
                 </a>
               </article>
@@ -184,6 +188,28 @@
           }
         }
       });
+    </script>
+
+    <script>
+      function showSlide(type) {
+        document.querySelectorAll(".slides").forEach((slide) => {
+          slide.classList.remove("active");
+          if (slide.dataset.type === type) {
+            slide.classList.add("active");
+          }
+        });
+      }
+
+      function copyText(id, button) {
+        const text = document.getElementById(id).innerText;
+        navigator.clipboard.writeText(text).then(() => {
+          button.innerText = "Скопировано ✅";
+
+          setTimeout(() => {
+            button.innerText = "Скопировать";
+          }, 1500);
+        });
+      }
     </script>
 
     <script type="module" src="JavaScript/router.js"></script>

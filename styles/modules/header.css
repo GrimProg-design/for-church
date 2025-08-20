@@ -52,7 +52,7 @@ header {
     padding: 30px 20px 20px;
     position: relative;
     color: white;
-    text-align: center;
+    text-align: left;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 
     /* Пришлось вынести сюда */

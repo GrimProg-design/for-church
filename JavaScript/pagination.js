@@ -20,7 +20,7 @@ export function initPagination(newsData, containerId, paginationId) {
       link.href = "#";
       link.className = "fours-menu-link";
       link.textContent = title;
-      link.dataset.page = page; // ⬅️ Ключевая строка для работы роутера
+      link.dataset.page = page;
       article.appendChild(link);
       container.appendChild(article);
     });
