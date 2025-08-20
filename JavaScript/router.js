@@ -20,11 +20,11 @@ document.addEventListener("DOMContentLoaded", () => {
       if (page.startsWith("renovation-news")) {
         path = `pages/archive-pages/renovation-archive/${page}.html`;
       } else if (page.startsWith("news-")) {
-        path = `../news/main-news/${page}.html`;
+        path = `news/main-news/${page}.html`;
       } else if (page.startsWith("cossackus-")) {
-        path = `../news/cossacks-news/${page}.html`;
+        path = `news/cossacks-news/${page}.html`;
       } else if (page.startsWith("renovation-")) {
-        path = `../news/renovation-news/${page}.html`;
+        path = `news/renovation-news/${page}.html`;
       } else if (page.startsWith("kazach-")) {
         path = `pages/archive-pages/cossacks-archive/${page}.html`;
       } else if (page.startsWith("general-")) {
