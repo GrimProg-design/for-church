@@ -4,6 +4,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const content = document.getElementById("content");
   const homeContent = content.innerHTML;
 
+  const repoName = "/for-church"; // <- имя твоего репозитория на GitHub
+
   async function loadPage(page, title = "") {
     try {
       if (page === "home") {
@@ -14,32 +16,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
       let path = "";
       let isArchivePage = false;
-
       const archiveRootPages = ["renovationArchive", "cossacks-archive", "archive"];
 
       if (page.startsWith("renovation-news")) {
-        path = `pages/archive-pages/renovation-archive/${page}.html`;
+        path = `${repoName}/news/main-news/${page}.html`;
       } else if (page.startsWith("news-")) {
-        path = `../news/main-news/${page}.html`;
+        path = `${repoName}/news/main-news/${page}.html`;
       } else if (page.startsWith("cossackus-")) {
-        path = `../news/cossacks-news/${page}.html`;
+        path = `${repoName}/news/cossacks-news/${page}.html`;
       } else if (page.startsWith("renovation-")) {
-        path = `../news/renovation-news/${page}.html`;
+        path = `${repoName}/news/renovation-news/${page}.html`;
       } else if (page.startsWith("kazach-")) {
-        path = `pages/archive-pages/cossacks-archive/${page}.html`;
+        path = `${repoName}/pages/archive-pages/cossacks-archive/${page}.html`;
       } else if (page.startsWith("general-")) {
-        path = `pages/archive-pages/news-archive/${page}.html`;
+        path = `${repoName}/pages/archive-pages/news-archive/${page}.html`;
       } else if (page.startsWith("decor-")) {
-        path = `pages/section/decor-section/${page}.html`;
+        path = `${repoName}/pages/section/decor-section/${page}.html`;
       } else if (page.startsWith("education-")) {
-        path = `pages/section/education-section/${page}.html`
+        path = `${repoName}/pages/section/education-section/${page}.html`;
       } else if (page.startsWith("social-")) {
-        path = `pages/section/social-section/${page}.html`
+        path = `${repoName}/pages/section/social-section/${page}.html`;
       } else if (archiveRootPages.includes(page)) {
-        path = `pages/archive-pages/${page}.html`;
+        path = `${repoName}/pages/archive-pages/${page}.html`;
         isArchivePage = true;
       } else {
-        path = `pages/${page}.html`;
+        path = `${repoName}/pages/${page}.html`;
       }
 
       const res = await fetch(path);
@@ -48,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const html = await res.text();
       content.innerHTML = html;
 
-      // Пагинация — только для корневых архивных страниц
+      // Пагинация
       if (isArchivePage) {
         if (page === "renovationArchive") {
           const renovationNews = [
@@ -89,12 +90,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  // Слушаем клики по ссылкам
   document.body.addEventListener("click", (e) => {
     const link = e.target.closest("a[data-page]");
     if (!link) return;
 
     e.preventDefault();
-
     const page = link.dataset.page;
     const title = link.textContent.trim();
 
@@ -102,6 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
     loadPage(page, title);
   });
 
+  // Обработка кнопки "назад/вперед" браузера
   window.addEventListener("popstate", (e) => {
     const state = e.state;
     if (state) {
@@ -111,6 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  // Подгрузка начальной страницы по URL
   const urlParams = new URLSearchParams(window.location.search);
   const initialPage = urlParams.get("page") || "home";
   const initialTitle = initialPage === "home" ? "Главная" : "";
