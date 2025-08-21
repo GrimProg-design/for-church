@@ -11,7 +11,6 @@ function moveLineToElement(element) {
   line.style.left = offsetLeft + "px";
 }
 
-// Наведение
 navLinks.forEach(link => {
   link.addEventListener("mouseenter", () => {
     moveLineToElement(link);
@@ -29,7 +28,6 @@ navLinks.forEach(link => {
   });
 });
 
-// Стартовая инициализация
 window.addEventListener("DOMContentLoaded", () => {
   const active = document.querySelector(".nav-menu a.active");
   if (active) moveLineToElement(active);

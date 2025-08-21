@@ -31,7 +31,7 @@
               src="images/pigeon-right.png"
               alt="Голубь справа"
             />
-            <img src="images/hram.png" alt="Изображение храма" class="church"/>
+            <img src="images/hram.png" alt="Изображение храма" class="church" />
             <h1>
               ХРАМ ПОКРОВА <br />
               БОЖЬЕЙ МАТЕРИ
@@ -121,10 +121,24 @@
           </ul>
           <h2 class="h2-title">Отчеты</h2>
           <ul class="sidebar-menu">
-            <li><a href="#" data-page="reports-kazach">Отчеты казачества</a></li>
-            <li><a href="#" data-page="reports-social">Отчеты социального служения</a></li>
-            <li><a href="#" data-page="reports-renovation">Отчеты о строительстве и ремонте</a></li>
-            <li><a href="#" data-page="reports-flowers">Отчеты цветочной группы</a></li>
+            <li>
+              <a href="#" data-page="reports-kazach">Отчеты казачества</a>
+            </li>
+            <li>
+              <a href="#" data-page="reports-social"
+                >Отчеты социального служения</a
+              >
+            </li>
+            <li>
+              <a href="#" data-page="reports-renovation"
+                >Отчеты о строительстве и ремонте</a
+              >
+            </li>
+            <li>
+              <a href="#" data-page="reports-flowers"
+                >Отчеты цветочной группы</a
+              >
+            </li>
           </ul>
           <h2 class="h2-title">Архив</h2>
           <ul class="sidebar-menu">
@@ -158,6 +172,8 @@
       <span></span>
     </button>
 
+
+    <!-- Этот код отвечает за выдвигающееся боковое меню, это для реализации бокового меню на телефонах и маленьких планшетах -->
     <script>
       const toggleButton = document.querySelector(".menu-toggle");
       const sidebar = document.querySelector(".sidebar");
@@ -182,6 +198,8 @@
       });
     </script>
 
+
+<!-- Этот код отвечает за перенос адресса и номеров телефона с шапки в footer при достижении ширины экрана 900 -->
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         if (window.innerWidth <= 900) {
@@ -197,6 +215,8 @@
       });
     </script>
 
+
+<!-- Этот скрипт отвечает за копирование, в шапке есть кнопка "пожертвовать и там можно скопировать номер карты и телефона, вот за это этот код и отвечает" -->
     <script>
       function showSlide(type) {
         document.querySelectorAll(".slides").forEach((slide) => {
