@@ -37,6 +37,8 @@ document.addEventListener("DOMContentLoaded", () => {
         path = `pages/section/social-section/${page}.html`
       } else if (page.startsWith("support")) {
         path = `pages/${page}.html`
+      } else if (page.startsWith("reports-")) {
+        path = `pages/${page}.html`
       } else if (archiveRootPages.includes(page)) {
         path = `pages/archive-pages/${page}.html`;
         isArchivePage = true;
