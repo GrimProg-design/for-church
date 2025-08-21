@@ -31,7 +31,7 @@
               src="images/pigeon-right.png"
               alt="Голубь справа"
             />
-            <img src="images/hram.png" alt="Изображение храма" />
+            <img src="images/hram.png" alt="Изображение храма" class="church"/>
             <h1>
               ХРАМ ПОКРОВА <br />
               БОЖЬЕЙ МАТЕРИ
@@ -60,7 +60,7 @@
               <li>
                 <a href="#" data-page="schedule">Расписание богослужений</a>
               </li>
-              <li><a href="#" data-page="reports">Отчеты</a></li>
+              <li><a href="#" data-page="reports">Объявления</a></li>
               <li><a href="#" data-page="contacts">Контакты</a></li>
             </ul>
             <div class="nav-fade left"></div>
@@ -177,7 +177,7 @@
 
     <script>
       document.addEventListener("DOMContentLoaded", () => {
-        if (window.innerWidth <= 600) {
+        if (window.innerWidth <= 900) {
           const address = document.querySelector(".address-wrapper");
           const footerAddressTarget = document.querySelector(
             ".address-wrapper-mobile"

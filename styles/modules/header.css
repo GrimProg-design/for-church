@@ -11,7 +11,7 @@ header {
   flex-wrap: wrap;
   gap: 10px;
   padding: 20px 15px;
-  max-width: 1200px;
+  max-width: 1300px;
   margin: 0 auto;
 }
 
@@ -32,14 +32,16 @@ header {
   text-align: center;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 800px) {
+  .pigeon {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) {
   .header-top {
     display: flex;
     padding: 0px;
-  }
-
-  .pigeon {
-    display: none;
   }
 
   .logo-section {
@@ -81,7 +83,6 @@ header {
     text-decoration: underline;
   }
 
-  /* Градиент-переход от footer к основному фону вверх */
   footer::before {
     content: "";
     position: absolute;
@@ -91,6 +92,18 @@ header {
     height: 80px;
     background: linear-gradient(to bottom, transparent 50%, #04304f 100%);
     z-index: 1;
+  }
+}
+
+@media (max-width: 386px) {
+  .church {
+    display: none;
+  }
+}
+
+@media (min-width: 1500px) {
+  header {
+    border-radius: 10px 10px 0 0;
   }
 }
 

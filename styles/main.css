@@ -24,4 +24,18 @@ body {
   font-family: sans-serif;
   color: #222;
   background-color: #d6e3f4;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+@media (min-width: 1500px) {
+  html {
+    background-color: #bbd0ed;
+  }
+
+  body {
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px #9798a0, -5px -5px 14px #ffffff;
+    margin-top: 30px;
+  }
 }

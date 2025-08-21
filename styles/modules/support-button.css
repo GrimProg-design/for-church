@@ -7,6 +7,8 @@
   height: 6vh;
   min-width: 70px;
   min-height: 40px;
+  max-width: 300px;
+  max-height: 80px;
   align-items: center;
   justify-content: center;
   border: 2px solid black;
