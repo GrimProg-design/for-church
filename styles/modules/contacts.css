@@ -1,5 +1,6 @@
 /* Тут находятся стили для контактов */
 .contacts-grid > article {
+  max-height: 250px;
   margin: 20px;
   height: 40vh;
   position: relative;

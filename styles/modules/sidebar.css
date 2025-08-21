@@ -1,5 +1,4 @@
 /* Это часть кода отвечаает за боковое меню */
-/* === 1. Стандартный вид (desktop) === */
 .sidebar {
   background-color: #f4f6f8;
   padding: 20px;
@@ -77,7 +76,7 @@
 }
 
 /* === 3. Мобильный вид (до 768px) === */
-@media (max-width: 768px) {
+@media (max-width: 1100px) {
   .sidebar {
     position: fixed;
     top: 0;
