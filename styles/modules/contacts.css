@@ -1,6 +1,7 @@
 /* Тут находятся стили для контактов */
 .contacts-grid > article {
   max-height: 250px;
+  min-height: 250px;
   margin: 20px;
   height: 40vh;
   position: relative;
@@ -34,6 +35,8 @@
   display: flex;
   align-items: flex-start;
   gap: 16px;
+  height: 100%;
+  overflow-y: hidden;
 }
 
 .photo-wrapper {
@@ -69,6 +72,7 @@
   font-size: 0.95rem;
   margin-top: 8px;
   text-align: left;
+  font-size: 1rem;
 }
 
 figure {
