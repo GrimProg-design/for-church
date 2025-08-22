@@ -1,8 +1,8 @@
 export function initAdvent(posts) {
-    // div для всей этой страницы его можно найти в advertisements.html
+  // div для всей этой страницы его можно найти в advertisements.html
   const content = document.querySelector(".advent");
 
-//   div для всех постов
+  //   div для всех постов
   const mainDiv = document.createElement("div");
   mainDiv.className = "posts-wrapper";
 
@@ -14,14 +14,19 @@ export function initAdvent(posts) {
       [randomPosts[i], randomPosts[j]] = [randomPosts[j], randomPosts[i]];
     }
 
-    randomPosts.forEach(post => {
-        const postDiv = document.createElement("div");
+    randomPosts.forEach((post) => {
+        const a = document.createElement("a")
 
-        postDiv.className = "post-wrapper"
+        a.className = "postLinks"
+
+      const postDiv = document.createElement("div");
+
+      postDiv.className = "post-wrapper";
       const p = document.createElement("p");
       p.textContent = post.title;
       postDiv.appendChild(p);
-      mainDiv.appendChild(postDiv);
+      a.appendChild(postDiv);
+      mainDiv.appendChild(a);
     });
   }
 
@@ -32,4 +37,3 @@ export function initAdvent(posts) {
 
   renderPosts();
 }
-
