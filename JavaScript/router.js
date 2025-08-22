@@ -97,7 +97,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const posts = [
           { title: "Объявление 1", id: 1 },
           { title: "Объявление 2", id: 2 },
-          { title: "Объявление 3", id: 3 }
+          { title: "Объявление 3", id: 3 },
+          { title: "Объявление 4", id: 4 }
         ]
         initAdvent(posts)
       }

@@ -1,20 +1,28 @@
 export function initAdvent(posts) {
-    const content = document.querySelector(".advent")
+  const content = document.querySelector(".advent");
+  const mainDiv = document.createElement("div");
+  mainDiv.className = "wrapperDiv";
 
-    const mainDiv = document.createElement("div");
-    mainDiv.className = "wrapperDiv";
+  function randomGen() {
+    const randomPosts = [...posts];
 
-    function renderPage() {
-
-        for(let i = 0; i < posts.length; i++) {
-            const text = document.createElement("p")
-            let mainTitle = posts[i].title;
-            text.textContent = mainTitle;
-            mainDiv.appendChild(text);
-            content.appendChild(mainDiv)
-        }
-
+    for (let i = randomPosts.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [randomPosts[i], randomPosts[j]] = [randomPosts[j], randomPosts[i]];
     }
 
-    renderPage()
+    randomPosts.forEach(post => {
+      const p = document.createElement("p");
+      p.textContent = post.title;
+      mainDiv.appendChild(p);
+    });
+  }
+
+  function renderPosts() {
+    randomGen();
+    content.appendChild(mainDiv);
+  }
+
+  renderPosts();
 }
+
