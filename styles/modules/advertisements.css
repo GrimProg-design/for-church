@@ -1,4 +1,37 @@
 h2 {
-    text-align: center;
-    margin-top: 50px;
+  text-align: center;
+  margin-top: 50px;
+}
+
+
+.posts-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  justify-items: center;
+  margin: 20px;
+}
+
+.post-wrapper {
+  width: 100%;
+  max-width: 250px;
+  height: 250px;
+  border: 1px solid #000;
+  border-radius: 10px;
+  min-width: 100px;
+  min-height: 50px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+@media (width > 800px) {
+    .posts-wrapper {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (width > 1350px) {
+    .posts-wrapper{
+        grid-template-columns: repeat(4, 1fr);
+    }
 }
