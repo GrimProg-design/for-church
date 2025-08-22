@@ -1,14 +1,19 @@
-export function initAdvent() {
+export function initAdvent(posts) {
     const content = document.querySelector(".advent")
 
-    function renderPage() {
-        const btn = document.createElement("button");
-        btn.textContent = "click";
-        content.appendChild(btn)
+    const mainDiv = document.createElement("div");
+    mainDiv.className = "wrapperDiv";
 
-        btn.addEventListener("click", () => {
-            console.log("hi")
-        })
+    function renderPage() {
+
+        for(let i = 0; i < posts.length; i++) {
+            const text = document.createElement("p")
+            let mainTitle = posts[i].title;
+            text.textContent = mainTitle;
+            mainDiv.appendChild(text);
+            content.appendChild(mainDiv)
+        }
+
     }
 
     renderPage()
