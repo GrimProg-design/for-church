@@ -60,7 +60,7 @@
               <li>
                 <a href="#" data-page="schedule">Расписание богослужений</a>
               </li>
-              <li><a href="#" data-page="advertisements">Объявления</a></li>
+              <li><a href="#" data-page="advertisements" class="advert">Объявления</a></li>
               <li><a href="#" data-page="contacts">Контакты</a></li>
             </ul>
             <div class="nav-fade left"></div>
@@ -236,6 +236,13 @@
             button.innerText = "Скопировать";
           }, 1500);
         });
+      }
+    </script>
+
+    <script>
+      function advert(id) {
+        const div = document.querySelector(".cont").innerHTML;
+        console.log(div)
       }
     </script>
 

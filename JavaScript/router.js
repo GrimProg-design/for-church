@@ -1,4 +1,5 @@
 import { initPagination } from "./pagination.js";
+import { initAdvent } from "./advertisements.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   const content = document.getElementById("content");
@@ -14,6 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       let path = "";
       let isArchivePage = false;
+      let isAdventPage = false;
 
       const archiveRootPages = ["renovationArchive", "cossacks-archive", "archive"];
 
@@ -44,6 +46,9 @@ document.addEventListener("DOMContentLoaded", () => {
         isArchivePage = true;
       } else {
         path = `pages/${page}.html`;
+        if(page.startsWith("advertisements")) {
+          isAdventPage = true
+        }
       }
 
       const res = await fetch(path);
@@ -52,6 +57,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const html = await res.text();
       content.innerHTML = html;
 
+
+      // пагинация
       if (isArchivePage) {
         if (page === "renovationArchive") {
           const renovationNews = [
@@ -83,6 +90,13 @@ document.addEventListener("DOMContentLoaded", () => {
           initPagination(generalNews, "news-container-general", "pagination-general");
         }
       }
+
+
+      // Объявления
+      if(isAdventPage) {
+        initAdvent()
+      }
+      
 
       document.title = title ? `Храм — ${title}` : "Храм";
       window.scrollTo({ top: 0, behavior: "smooth" });
