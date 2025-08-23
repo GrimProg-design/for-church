@@ -83,6 +83,14 @@ h2 {
   padding-right: 30px;
 }
 
+#finder:hover {
+  box-shadow: 5px 5px 15px rgb(68, 152, 172);
+}
+
+#finder:focus {
+  box-shadow: 5px 5px 15px rgb(68, 152, 172);
+}
+
 @media (width > 800px) {
   .posts-wrapper {
     grid-template-columns: repeat(3, 1fr);
