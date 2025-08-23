@@ -6,29 +6,40 @@ export function initAdvent(posts) {
   const mainDiv = document.createElement("div");
   mainDiv.className = "posts-wrapper";
 
+  function generator(post) {
+    const a = document.createElement("a");
+
+    a.className = "postLinks";
+
+    const postDiv = document.createElement("div");
+
+    postDiv.className = "post-wrapper";
+    const p = document.createElement("p");
+    p.textContent = post.title;
+    postDiv.appendChild(p);
+    a.appendChild(postDiv);
+    mainDiv.appendChild(a);
+  }
+
   function filterFunc(e) {
     const select = document.querySelector("#filter");
     const value = select.value;
     const filter = [...posts];
 
-    mainDiv.innerHTML = ""
+    mainDiv.innerHTML = "";
 
     if (value === "new") {
       const new1 = filter.filter((ad) => ad.age === "new");
       new1.forEach((post) => {
-        const a = document.createElement("a");
-
-        a.className = "postLinks";
-
-        const postDiv = document.createElement("div");
-
-        postDiv.className = "post-wrapper";
-        const p = document.createElement("p");
-        p.textContent = post.title;
-        postDiv.appendChild(p);
-        a.appendChild(postDiv);
-        mainDiv.appendChild(a);
+        generator(post)
       });
+    } else if(value === "all") {
+      randomGen()
+    } else if(value === "old") {
+      const new2 = filter.filter((ad) => ad.age === "old");
+      new2.forEach((post) => {
+        generator(post)
+      })
     }
   }
 
@@ -44,18 +55,7 @@ export function initAdvent(posts) {
     }
 
     randomPosts.forEach((post) => {
-      const a = document.createElement("a");
-
-      a.className = "postLinks";
-
-      const postDiv = document.createElement("div");
-
-      postDiv.className = "post-wrapper";
-      const p = document.createElement("p");
-      p.textContent = post.title;
-      postDiv.appendChild(p);
-      a.appendChild(postDiv);
-      mainDiv.appendChild(a);
+      generator(post)
     });
   }
 
