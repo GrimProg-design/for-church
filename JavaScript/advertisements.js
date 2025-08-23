@@ -21,6 +21,25 @@ export function initAdvent(posts) {
     mainDiv.appendChild(a);
   }
 
+  function search() {
+    const search = document.querySelector("#finder");
+    const searchPost = [...posts];
+
+    search.addEventListener("input", () => {
+      const value = search.value.toLowerCase();
+      mainDiv.innerHTML = "";
+
+      const new3 = searchPost.filter((ad) =>
+        ad.title.toLowerCase().includes(value)
+      );
+
+      new3.forEach((post) => {
+        generator(post);
+      });
+    });
+  }
+  search();
+
   function filterFunc(e) {
     const select = document.querySelector("#filter");
     const value = select.value;
@@ -31,15 +50,15 @@ export function initAdvent(posts) {
     if (value === "new") {
       const new1 = filter.filter((ad) => ad.age === "new");
       new1.forEach((post) => {
-        generator(post)
+        generator(post);
       });
-    } else if(value === "all") {
-      randomGen()
-    } else if(value === "old") {
+    } else if (value === "all") {
+      randomGen();
+    } else if (value === "old") {
       const new2 = filter.filter((ad) => ad.age === "old");
       new2.forEach((post) => {
-        generator(post)
-      })
+        generator(post);
+      });
     }
   }
 
@@ -55,7 +74,7 @@ export function initAdvent(posts) {
     }
 
     randomPosts.forEach((post) => {
-      generator(post)
+      generator(post);
     });
   }
 
