@@ -38,6 +38,13 @@ export function initAdvent(posts) {
       new3.forEach((post) => {
         generator(post);
       });
+
+      if(new3.length === 0) {
+        const h = document.createElement("h2");
+        h.className = "warn"
+        h.textContent = "Упс похоже по вашему запросу ничего не найдено 😔"
+        mainDiv.appendChild(h)
+      }
     });
   }
   search();

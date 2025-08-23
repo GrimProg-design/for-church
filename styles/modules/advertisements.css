@@ -111,3 +111,10 @@ h2 {
     grid-template-columns: repeat(4, 1fr);
   }
 }
+
+.warn {
+  display: flex;
+  flex-wrap: wrap;
+  width: 70%;
+  grid-column: 1/3;
+}
