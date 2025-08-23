@@ -95,10 +95,10 @@ document.addEventListener("DOMContentLoaded", () => {
       // Объявления
       if(isAdventPage) {
         const posts = [
-          { title: "Объявление 1", id: 1 },
-          { title: "Объявление 2", id: 2 },
-          { title: "Объявление 3", id: 3 },
-          { title: "Объявление 4", id: 4 }
+          { title: "Объявление 1", id: 1, age: "new" },
+          { title: "Объявление 2", id: 2, age: "new" },
+          { title: "Объявление 3", id: 3, age: "old" },
+          { title: "Объявление 4", id: 4, age: "old" }
         ]
         initAdvent(posts)
       }
