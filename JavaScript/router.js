@@ -39,6 +39,8 @@ document.addEventListener("DOMContentLoaded", () => {
         path = `pages/section/social-section/${page}.html`
       } else if (page.startsWith("support")) {
         path = `pages/${page}.html`
+      } else if(page.startsWith("advertisements-")) {
+        path = `pages/advertisements/${page}.html`
       } else if (page.startsWith("reports-")) {
         path = `pages/${page}.html`
       } else if (archiveRootPages.includes(page)) {

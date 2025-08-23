@@ -10,6 +10,8 @@ export function initAdvent(posts) {
     const a = document.createElement("a");
 
     a.className = "postLinks";
+    a.setAttribute("href", "#");
+    a.setAttribute("data-page", `advertisements-${post.id}`)
 
     const postDiv = document.createElement("div");
 
