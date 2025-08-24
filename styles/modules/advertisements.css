@@ -59,6 +59,8 @@ h2 {
 }
 
 #filter {
+ 
+
   margin-right: 30px;
   margin-left: 5px;
   width: 120px;
@@ -67,16 +69,16 @@ h2 {
   text-align: center;
   border: 1px solid silver;
   color: black;
-  box-shadow: 5px 5px 15px rgb(86, 195, 222);
+  box-shadow: 5px 5px 15px rgb(163, 163, 163);
   cursor: pointer;
 }
 
 #filter:hover {
-  box-shadow: 5px 5px 15px rgb(68, 152, 172);
+  box-shadow: 5px 5px 15px rgb(144, 144, 144);
 }
 
 #filter:focus {
-  box-shadow: 5px 5px 15px rgb(68, 152, 172);
+  box-shadow: 5px 5px 15px rgb(144, 144, 144);
 }
 
 #finder {
@@ -88,16 +90,16 @@ h2 {
   background-size: 16px;
   padding: 5px;
   border: 1px solid rgb(132, 132, 132);
-  box-shadow: 5px 5px 15px rgb(86, 195, 222);
+  box-shadow: 5px 5px 15px rgb(163, 163, 163);
   padding-right: 30px;
 }
 
 #finder:hover {
-  box-shadow: 5px 5px 15px rgb(68, 152, 172);
+  box-shadow: 5px 5px 15px rgb(144, 144, 144);
 }
 
 #finder:focus {
-  box-shadow: 5px 5px 15px rgb(68, 152, 172);
+  box-shadow: 5px 5px 15px rgb(144, 144, 144);
 }
 
 @media (width > 800px) {
