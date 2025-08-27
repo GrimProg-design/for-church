@@ -8,6 +8,8 @@ export function initAdvent(posts) {
 
   function generator(post) {
     const a = document.createElement("a");
+    const textDiv = document.createElement("div")
+    textDiv.className = "text-wrapper-advent"
 
     a.className = "postLinks";
     a.setAttribute("href", "#");
@@ -15,12 +17,21 @@ export function initAdvent(posts) {
 
     const postDiv = document.createElement("div");
 
+    const photoDiv = document.createElement("div");
+    const img = document.createElement("img");
+    photoDiv.className = "photo-wrapper-advent";
+    img.setAttribute("src", post.img);
+    img.className = "advent-photo"
+    photoDiv.appendChild(img);
+    
     postDiv.className = "post-wrapper";
     const p = document.createElement("p");
+    textDiv.appendChild(p);
     p.textContent = post.title;
-    postDiv.appendChild(p);
+    postDiv.appendChild(textDiv);
     a.appendChild(postDiv);
     mainDiv.appendChild(a);
+    postDiv.prepend(photoDiv)
   }
 
   function search() {
