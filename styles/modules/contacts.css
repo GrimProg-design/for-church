@@ -22,7 +22,7 @@
   user-select: none;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  padding: 16px;
+  padding: 16px 16px 0 16px;
   box-sizing: border-box;
 }
 
@@ -45,7 +45,7 @@
   text-align: center;
 }
 
-.contact-img1 {
+.contact-img {
   width: 100%;
   height: auto;
   border-radius: 8px;
@@ -83,11 +83,5 @@ figure {
   font-size: 2rem;
   margin-bottom: 20px;
   text-align: center;
-}
-
-.contact-img1 {
-  width: 150px;
-  min-width: 150px;
-  height: 190px;
 }
 /*_____________________________*/
