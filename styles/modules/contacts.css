@@ -85,5 +85,9 @@ figure {
   text-align: center;
 }
 
-
+.contact-img1 {
+  width: 150px;
+  min-width: 150px;
+  height: 190px;
+}
 /*_____________________________*/
