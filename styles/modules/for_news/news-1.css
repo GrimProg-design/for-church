@@ -82,8 +82,11 @@
 
 /* ===== Видео блок ===== */
 .news-video {
-  margin: 20px 0;
+  position: relative;
+  display: inline;
+  margin: 20px 20px;
   text-align: left;
+  float: left;
 }
 
 .news-video video {
