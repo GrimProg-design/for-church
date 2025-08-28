@@ -21,6 +21,7 @@ export function initAdvent(posts) {
     const img = document.createElement("img");
     photoDiv.className = "photo-wrapper-advent";
     img.setAttribute("src", post.img);
+    img.setAttribute("loading", "lazy")
     img.className = "advent-photo"
     photoDiv.appendChild(img);
     
