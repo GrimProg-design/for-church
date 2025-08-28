@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // Объявления
       if(isAdventPage) {
         const posts = [
-          { title: "Соцотдел храма примет старые диваны, стулья, столы и другую б/у мебель", img: "images/advertisements/old_sofa.jpg", id: 1, age: "new" },
+          { title: "Соцотдел храма примет старые диваны, стулья, столы и другую б/у мебель", img: "images/advertisements/old_furniture/old_sofa.jpg", id: 1, age: "new" },
           { title: "Объявление 2", id: 2, age: "new" },
           { title: "Объявление 3", id: 3, age: "old" },
           { title: "Объявление 4", id: 4, age: "old" }
