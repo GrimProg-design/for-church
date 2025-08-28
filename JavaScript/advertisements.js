@@ -7,16 +7,18 @@ export function initAdvent(posts) {
   mainDiv.className = "posts-wrapper";
 
   function generator(post) {
+    // главная ссылка и обертка для объявления (по ним переходится на само объявление)
     const a = document.createElement("a");
     const textDiv = document.createElement("div")
     textDiv.className = "text-wrapper-advent"
 
+    // изменения для главной ссылки, добавление атрибутов
     a.className = "postLinks";
     a.setAttribute("href", "#");
     a.setAttribute("data-page", `advertisements-${post.id}`)
 
+    // Создаем обертку для объявления, фотография / текст
     const postDiv = document.createElement("div");
-
     const photoDiv = document.createElement("div");
     const img = document.createElement("img");
     photoDiv.className = "photo-wrapper-advent";
@@ -24,8 +26,9 @@ export function initAdvent(posts) {
     img.setAttribute("loading", "lazy")
     img.className = "advent-photo"
     photoDiv.appendChild(img);
-    
     postDiv.className = "post-wrapper";
+
+    // Объединяем все и создаем текст
     const p = document.createElement("p");
     textDiv.appendChild(p);
     p.textContent = post.title;
