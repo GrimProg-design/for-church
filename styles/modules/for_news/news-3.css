@@ -1,0 +1,14 @@
+.main-news {
+  width: 150%;
+}
+
+.news-image-3{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.news-3-photos {
+    width: 100%;
+    border-radius: 6px;
+}
