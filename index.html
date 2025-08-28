@@ -31,7 +31,11 @@
               src="images/header/pigeon-right.png"
               alt="Голубь слева"
             />
-            <img src="images/header/hram.png" alt="Изображение храма" class="church" />
+            <img
+              src="images/header/hram.png"
+              alt="Изображение храма"
+              class="church"
+            />
             <h1 class="name">
               ХРАМ ПОКРОВА <br />
               БОЖЬЕЙ МАТЕРИ
@@ -60,7 +64,11 @@
               <li>
                 <a href="#" data-page="schedule">Расписание богослужений</a>
               </li>
-              <li><a href="#" data-page="advertisements" class="advert">Объявления</a></li>
+              <li>
+                <a href="#" data-page="advertisements" class="advert"
+                  >Объявления</a
+                >
+              </li>
               <li><a href="#" data-page="contacts">Контакты</a></li>
             </ul>
             <div class="nav-fade left"></div>
@@ -89,7 +97,7 @@
                 </a>
               </article>
               <article class="box-news-2">
-                <a href="#" data-page="news-2">Новость 2</a>
+                <a href="#" data-page="news-2"> Новость 2 </a>
               </article>
               <article class="box-news-3">
                 <a href="#" data-page="news-3">Новость 3</a>
@@ -98,7 +106,16 @@
                 <a href="#" data-page="news-4">Новость 4</a>
               </article>
               <article class="box-news-5">
-                <a href="#" data-page="news-5">Новость 5</a>
+                <a href="#" data-page="news-5">
+                  <img
+                    src="./images-news/main_img/second_news/WhatsApp Image 2025-08-28 at 22.50.33.jpeg"
+                    alt="Вторая новость"
+                  />
+                  <h3 class="news-title">
+                    Цветочное убранство Храма к праздникику "Успение Пресвятой
+                    Богородицы"
+                  </h3>
+                </a>
               </article>
               <article class="box-news-6">
                 <a href="#" data-page="news-6">Новость 6</a>
@@ -172,7 +189,6 @@
       <span></span>
     </button>
 
-
     <!-- Этот код отвечает за выдвигающееся боковое меню, это для реализации бокового меню на телефонах и маленьких планшетах -->
     <script>
       const toggleButton = document.querySelector(".menu-toggle");
@@ -198,8 +214,7 @@
       });
     </script>
 
-
-<!-- Этот код отвечает за перенос адресса и номеров телефона с шапки в footer при достижении ширины экрана 900 -->
+    <!-- Этот код отвечает за перенос адресса и номеров телефона с шапки в footer при достижении ширины экрана 900 -->
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         if (window.innerWidth <= 1107) {
@@ -215,8 +230,7 @@
       });
     </script>
 
-
-<!-- Этот скрипт отвечает за копирование, в шапке есть кнопка "пожертвовать и там можно скопировать номер карты и телефона, вот за это этот код и отвечает" -->
+    <!-- Этот скрипт отвечает за копирование, в шапке есть кнопка "пожертвовать и там можно скопировать номер карты и телефона, вот за это этот код и отвечает" -->
     <script>
       function showSlide(type) {
         document.querySelectorAll(".slides").forEach((slide) => {
@@ -242,7 +256,7 @@
     <script>
       function advert(id) {
         const div = document.querySelector(".cont").innerHTML;
-        console.log(div)
+        console.log(div);
       }
     </script>
 
