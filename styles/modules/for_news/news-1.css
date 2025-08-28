@@ -90,10 +90,10 @@
 }
 
 .news-video video {
-  max-width: 400px;   /* ограничиваем ширину */
-  max-height: 600px;  /* ограничиваем высоту */
-  width: auto;        /* ширина подгоняется сама */
-  height: auto;       /* высота пропорционально */
+  max-width: 400px;
+  max-height: 600px;
+  width: auto;
+  height: auto;
   border-radius: 8px;
 }
 
