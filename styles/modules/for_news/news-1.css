@@ -97,6 +97,12 @@
   border-radius: 8px;
 }
 
+@media (max-width: 488px) {
+  .news-video {
+    float: none;
+  }
+}
+
 /* ===== Адаптив ===== */
 @media (max-width: 760px) {
   .news-one {
