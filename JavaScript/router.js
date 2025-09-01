@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if(isAdventPage) {
         const posts = [
           { title: "Соцотдел храма примет в дар двухярустные кровати, диваны, столы, стулья и другую б/у мебель", img: "images/advertisements/old_furniture/old_sofa.jpg", id: 1, age: "new" },
-          { title: "Объявление 2", id: 2, age: "new" },
+          { title: "Приглашаем добровольцев для помощи в сортировке на вещевом складе", img: "images/advertisements/workers/worker.JPG", id: 2, age: "new" },
           { title: "Объявление 3", id: 3, age: "old" },
           { title: "Объявление 4", id: 4, age: "old" }
         ]
