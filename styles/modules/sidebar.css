@@ -75,6 +75,14 @@
   transition: all 0.3s ease;
 }
 
+.moving {
+  position: sticky;
+}
+
+.moving:last-of-type {
+  top: 0px;
+}
+
 /* === 3. Мобильный вид (до 768px) === */
 @media (max-width: 1100px) {
   .sidebar {
