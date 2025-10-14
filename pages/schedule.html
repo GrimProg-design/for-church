@@ -1,7 +1,7 @@
 <!-- Ну чтоже господа, придется все это делать вручную каждый месяц ;(,
   потом в JS сделаю чтобы запрашивала текущее время и генерировало автоматически,
    хотя есть сомнения, поэтому пока так. А так же главная проблема почему откладываю на потом заключается в
-   том, что я хочу сделать чтобы при надатии на какой то день выходила более подробная информация,
+   том, что я хочу сделать чтобы при нажатии на какой то день выходила более подробная информация,
    но на это нужно одобрение
  -->
 
@@ -21,36 +21,112 @@
       <div class="calendar-header">Вс</div>
 
       <div class="calendar-day empty"></div>
-      <div class="calendar-day">1</div>
-      <div class="calendar-day">2</div>
-      <div class="calendar-day">3</div>
-      <div class="calendar-day">4</div>
-      <div class="calendar-day">5</div>
-      <div class="calendar-day sunday">6<br><span>Литургия</span></div>
-      <div class="calendar-day">7</div>
-      <div class="calendar-day">8</div>
-      <div class="calendar-day">9</div>
-      <div class="calendar-day holiday">10<br><span>Рождество Иоанна</span></div>
-      <div class="calendar-day">11</div>
-      <div class="calendar-day">12</div>
-      <div class="calendar-day sunday">13<br><span>Служба</span></div>
-      <div class="calendar-day">14</div>
-      <div class="calendar-day">15</div>
-      <div class="calendar-day">16</div>
-      <div class="calendar-day">17</div>
-      <div class="calendar-day">18</div>
-      <div class="calendar-day">19</div>
-      <div class="calendar-day sunday">20<br><span>Престольный праздник</span></div>
-      <div class="calendar-day sunday holiday">21</div>
-      <div class="calendar-day">22</div>
-      <div class="calendar-day">23</div>
-      <div class="calendar-day">24</div>
-      <div class="calendar-day">25</div>
-      <div class="calendar-day">26</div>
-      <div class="calendar-day sunday">27<br><span>Служба</span></div>
-      <div class="calendar-day">28</div>
-      <div class="calendar-day">29</div>
-      <div class="calendar-day">30</div>
+      <div class="calendar-day" data-day="1">1</div>
+      <div class="calendar-day" data-day="2">2</div>
+      <div class="calendar-day" data-day="3">3</div>
+      <div class="calendar-day" data-day="4">4</div>
+      <div class="calendar-day" data-day="5">5</div>
+      <div class="calendar-day sunday" data-day="6">
+        6<br /><span>Литургия</span>
+      </div>
+      <div class="calendar-day" data-day="7">7</div>
+      <div class="calendar-day" data-day="8">8</div>
+      <div class="calendar-day" data-day="9">9</div>
+      <div class="calendar-day holiday" data-day="10">
+        10<br /><span>Рождество Иоанна</span>
+      </div>
+      <div class="calendar-day" data-day="11">11</div>
+      <div class="calendar-day" data-day="12">12</div>
+      <div class="calendar-day sunday" data-day="13">
+        13<br /><span>Служба</span>
+      </div>
+      <div class="calendar-day" data-day="14">14</div>
+      <div class="calendar-day" data-day="15">15</div>
+      <div class="calendar-day" data-day="16">16</div>
+      <div class="calendar-day" data-day="17">17</div>
+      <div class="calendar-day" data-day="18">18</div>
+      <div class="calendar-day" data-day="19">19</div>
+      <div class="calendar-day sunday" data-day="20">
+        20<br /><span>Престольный праздник</span>
+      </div>
+      <div class="calendar-day sunday holiday" data-day="21">21</div>
+      <div class="calendar-day" data-day="22">22</div>
+      <div class="calendar-day" data-day="23">23</div>
+      <div class="calendar-day" data-day="24">24</div>
+      <div class="calendar-day" data-day="25">25</div>
+      <div class="calendar-day" data-day="26">26</div>
+      <div class="calendar-day sunday" data-day="27">
+        27<br /><span>Служба</span>
+      </div>
+      <div class="calendar-day" data-day="28">28</div>
+      <div class="calendar-day" data-day="29">29</div>
+      <div class="calendar-day" data-day="30">30</div>
     </div>
   </div>
 </section>
+
+<div class="modal" id="calendar-modal">
+  <div class="modal-content">
+    <span class="modal-close">&times;</span>
+    <h3 id="modal-title"></h3>
+    <p id="modal-description"></p>
+  </div>
+</div>
+
+<script>
+  const holidayInfo = {
+    6: {
+      title: "Литургия",
+      description:
+        "Воскресная Божественная литургия — время общего моления и единения в вере.",
+    },
+    10: {
+      title: "Рождество Иоанна Предтечи",
+      description:
+        "Праздник рождения святого пророка Иоанна Крестителя — великого провозвестника пришествия Христа.",
+    },
+    13: {
+      title: "Служба",
+      description:
+        "Обычная воскресная служба. В этот день читаются Евангелия и совершаются молитвы о мире.",
+    },
+    20: {
+      title: "Престольный праздник",
+      description:
+        "Главный день храма, посвящённый его святому покровителю. Особая торжественная служба и крестный ход.",
+    },
+    27: {
+      title: "Служба",
+      description:
+        "Очередная воскресная литургия. В этот день верующие собираются на совместную молитву и благодарение.",
+    },
+  };
+
+  const modal = document.getElementById("calendar-modal");
+  const modalTitle = document.getElementById("modal-title");
+  const modalDesc = document.getElementById("modal-description");
+  const modalClose = document.querySelector(".modal-close");
+
+  document.querySelectorAll(".calendar-day[data-day]").forEach((day) => {
+    day.addEventListener("click", () => {
+      const dayNumber = day.dataset.day;
+      const info = holidayInfo[dayNumber];
+      if (info) {
+        modalTitle.textContent = info.title;
+        modalDesc.textContent = info.description;
+      } else {
+        modalTitle.textContent = `День ${dayNumber}`;
+        modalDesc.textContent = "Информация о празднике пока отсутствует.";
+      }
+      modal.style.display = "flex";
+    });
+  });
+
+  modalClose.addEventListener("click", () => (modal.style.display = "none"));
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) modal.style.display = "none";
+  });
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") modal.style.display = "none";
+  });
+</script>

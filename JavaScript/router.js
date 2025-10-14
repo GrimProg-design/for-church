@@ -1,5 +1,6 @@
 import { initPagination } from "./pagination.js";
 import { initAdvent } from "./advertisements.js";
+import { initCalendarModal } from "./modal.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   const content = document.getElementById("content");
@@ -34,22 +35,22 @@ document.addEventListener("DOMContentLoaded", () => {
       } else if (page.startsWith("decor-")) {
         path = `pages/section/decor-section/${page}.html`;
       } else if (page.startsWith("education-")) {
-        path = `pages/section/education-section/${page}.html`
+        path = `pages/section/education-section/${page}.html`;
       } else if (page.startsWith("social-")) {
-        path = `pages/section/social-section/${page}.html`
+        path = `pages/section/social-section/${page}.html`;
       } else if (page.startsWith("support")) {
-        path = `pages/${page}.html`
-      } else if(page.startsWith("advertisements-")) {
-        path = `pages/advertisements/${page}.html`
+        path = `pages/${page}.html`;
+      } else if (page.startsWith("advertisements-")) {
+        path = `pages/advertisements/${page}.html`;
       } else if (page.startsWith("reports-")) {
-        path = `pages/${page}.html`
+        path = `pages/${page}.html`;
       } else if (archiveRootPages.includes(page)) {
         path = `pages/archive-pages/${page}.html`;
         isArchivePage = true;
       } else {
         path = `pages/${page}.html`;
-        if(page.startsWith("advertisements")) {
-          isAdventPage = true
+        if (page.startsWith("advertisements")) {
+          isAdventPage = true;
         }
       }
 
@@ -59,8 +60,6 @@ document.addEventListener("DOMContentLoaded", () => {
       const html = await res.text();
       content.innerHTML = html;
 
-
-      // пагинация
       if (isArchivePage) {
         if (page === "renovationArchive") {
           const renovationNews = [
@@ -93,16 +92,17 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       }
 
-
-      // Объявления
-      if(isAdventPage) {
+      if (isAdventPage) {
         const posts = [
           { title: "Соцотдел храма примет в дар двухярустные кровати, диваны, столы, стулья и другую б/у мебель", img: "images/advertisements/old_furniture/old_sofa.jpg", id: 1, age: "new" },
           { title: "Приглашаем добровольцев для помощи в сортировке на вещевом складе", img: "images/advertisements/workers/worker.JPG", id: 2, age: "new" },
-        ]
-        initAdvent(posts)
+        ];
+        initAdvent(posts);
       }
-      
+
+      if (content.querySelector(".calendar-day")) {
+        initCalendarModal();
+      }
 
       document.title = title ? `Храм — ${title}` : "Храм";
       window.scrollTo({ top: 0, behavior: "smooth" });
