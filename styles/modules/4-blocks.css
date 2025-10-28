@@ -51,15 +51,19 @@
   grid-column: 1 / 3;
 }
 
+.help {
+  transform: scale(0.7);
+}
+
 @media(max-width: 760px) {
   .fours-menu{
     padding: 20px;
     grid-template-rows: repeat(2, 200px);
     gap: 15px;
   }
-}
 
-.help {
-  transform: scale(0.7);
+  .help {
+    transform: scale(0.5);
+  }
 }
 /*_____________________________*/
